@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How AI Can Help Humans — Demo Site</title>
+  <!-- Tailwind Play CDN (good for demos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small custom styles */
+    :root { --accent: #06b6d4; }
+    html, body { height: 100%; }
+    .glass { background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); backdrop-filter: blur(6px); }
+    /* Simple animated gradient for hero underline */
+    .rainbow-text { background: linear-gradient(90deg,#06b6d4,#f59e0b,#34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* Chat widget styling overrides */
+    .chat-bubble { background: rgba(255,255,255,0.04); padding: 0.75rem 1rem; border-radius: 0.75rem; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased leading-relaxed">
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-slate-900 font-bold">AI</div>
+      <div>
+        <h1 class="text-xl font-semibold">How AI Can Help Humans</h1>
+        <p class="text-sm text-slate-400">Practical examples, mini demos & ideas</p>
+      </div>
+    </div>
+    <nav class="flex items-center gap-3">
+      <button id="themeToggle" class="px-3 py-2 rounded-md bg-slate-800 text-slate-200 text-sm">Toggle theme</button>
+      <a href="#examples" class="px-3 py-2 text-sm rounded-md hover:bg-slate-800">Examples</a>
+      <a href="#assistant" class="px-3 py-2 text-sm rounded-md hover:bg-slate-800">Try Assistant</a>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pb-24">
+    <!-- Hero -->
+    <section class="grid md:grid-cols-2 gap-8 items-center my-8">
+      <div>
+        <h2 class="text-4xl font-extrabold leading-tight">Practical ways <span class="rainbow-text">AI helps</span> humans every day</h2>
+        <p class="mt-4 text-slate-300">From productivity tools and healthcare support to creative collaboration—AI augments human abilities so we can work smarter, learn faster, and solve harder problems together.</p>
+
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li class="glass p-3 rounded-lg">Personalized learning & tutoring</li>
+          <li class="glass p-3 rounded-lg">Automating repetitive tasks</li>
+          <li class="glass p-3 rounded-lg">Better diagnostics & research</li>
+          <li class="glass p-3 rounded-lg">Creative co-authoring (music, art, code)</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#assistant" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 rounded-md text-slate-900 font-semibold">Try the mini assistant</a>
+          <a href="#examples" class="px-4 py-2 border border-slate-700 rounded-md text-slate-300">See examples</a>
+        </div>
+      </div>
+
+      <div class="p-6 glass rounded-xl">
+        <h3 class="text-lg font-semibold">Live demo — offline AI assistant</h3>
+        <p class="text-sm text-slate-300 mt-1">Ask about one of the example scenarios or type a free question. This demo runs locally in your browser (no server).</p>
+
+        <div id="assistant" class="mt-4">
+          <div id="chatLog" class="max-h-64 overflow-y-auto space-y-3 p-3 rounded-md border border-slate-700"></div>
+
+          <form id="chatForm" class="mt-3 flex gap-2">
+            <input id="userInput" class="flex-1 px-3 py-2 bg-transparent border border-slate-700 rounded-md focus:outline-none" placeholder="Ask: How can AI help with studying?" />
+            <button class="px-4 py-2 bg-emerald-500 rounded-md text-slate-900" type="submit">Send</button>
+          </form>
+
+          <div class="mt-3 text-xs text-slate-400">Tip: Try questions like "Help me plan a study schedule" or "How can AI help in healthcare?"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section id="examples" class="mt-12">
+      <h3 class="text-2xl font-bold">Examples & case studies</h3>
+      <p class="text-slate-400 mt-2">Short descriptions of how AI is applied across domains.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <!-- Card 1 -->
+        <article class="p-6 bg-slate-800 rounded-2xl shadow">
+          <h4 class="font-semibold">Education — Personalized tutoring</h4>
+          <p class="mt-2 text-slate-300 text-sm">Adaptive systems tailor practice sets, spacing and explanations to each student's needs — improving retention and motivation.</p>
+          <ul class="mt-3 text-xs text-slate-400 space-y-1">
+            <li>• Automated practice & feedback</li>
+            <li>• Curriculum personalization</li>
+            <li>• Language support & translation</li>
+          </ul>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="p-6 bg-slate-800 rounded-2xl shadow">
+          <h4 class="font-semibold">Healthcare — Decision support</h4>
+          <p class="mt-2 text-slate-300 text-sm">AI helps clinicians analyze images and patient data to flag conditions early and suggest possible next steps.</p>
+          <ul class="mt-3 text-xs text-slate-400 space-y-1">
+            <li>• Faster triage</li>
+            <li>• Assistance with rare conditions</li>
+            <li>• Monitoring and remote care</li>
+          </ul>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="p-6 bg-slate-800 rounded-2xl shadow">
+          <h4 class="font-semibold">Productivity — Automating tasks</h4>
+          <p class="mt-2 text-slate-300 text-sm">From email triage to data extraction, AI automates repetitive work so humans can focus on higher-value tasks.</p>
+          <ul class="mt-3 text-xs text-slate-400 space-y-1">
+            <li>• Smart summaries</li>
+            <li>• Auto-generated reports</li>
+            <li>• Scheduling assistance</li>
+          </ul>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="p-6 bg-slate-800 rounded-2xl shadow md:col-span-2">
+          <h4 class="font-semibold">Creativity — Co-creation tools</h4>
+          <p class="mt-2 text-slate-300 text-sm">AI augments artists, musicians, and writers by generating ideas, variations, or polishing drafts while the human keeps authorship and judgment.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="p-6 bg-slate-800 rounded-2xl shadow">
+          <h4 class="font-semibold">Safety & environment</h4>
+          <p class="mt-2 text-slate-300 text-sm">AI models can help predict natural hazards, optimize energy use, and detect anomalies to reduce environmental impact.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive tools -->
+    <section class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="p-6 bg-slate-800 rounded-2xl">
+        <h4 class="font-semibold">Mini tool: Study planner</h4>
+        <p class="mt-2 text-slate-300 text-sm">Enter topics and available hours; the planner returns a suggested schedule (simple offline logic).</p>
+        <form id="plannerForm" class="mt-3 space-y-3">
+          <input id="topics" placeholder="Comma-separated topics e.g. Algebra, Biology" class="w-full px-3 py-2 bg-transparent border border-slate-700 rounded-md" />
+          <input id="hours" type="number" min="1" placeholder="Total hours available" class="w-full px-3 py-2 bg-transparent border border-slate-700 rounded-md" />
+          <button class="px-4 py-2 bg-indigo-600 rounded-md" type="button" id="planBtn">Generate Plan</button>
+        </form>
+        <div id="planResult" class="mt-3 text-sm text-slate-300"></div>
+      </div>
+
+      <div class="p-6 bg-slate-800 rounded-2xl">
+        <h4 class="font-semibold">Mini tool: Summarizer</h4>
+        <p class="mt-2 text-slate-300 text-sm">Paste a paragraph and get a short summary (rule-based demo).</p>
+        <textarea id="summaryInput" rows="5" class="w-full px-3 py-2 bg-transparent border border-slate-700 rounded-md" placeholder="Paste text here..."></textarea>
+        <div class="mt-3 flex gap-2">
+          <button id="summarizeBtn" class="px-4 py-2 bg-amber-500 rounded-md text-slate-900">Summarize</button>
+          <button id="clearSummary" class="px-4 py-2 border rounded-md">Clear</button>
+        </div>
+        <div id="summaryResult" class="mt-3 text-sm text-slate-300"></div>
+      </div>
+    </section>
+
+    <footer class="mt-14 border-t border-slate-800 pt-6 pb-12 text-slate-400">
+      <div class="max-w-4xl">
+        <p class="text-sm">This demo site is static and runs entirely in your browser. It showcases approachable ideas of how AI can help humans. For real integrations you'd connect to secure APIs, include model governance, explainability and human oversight.</p>
+        <p class="text-xs mt-3">Made with ♥ for learning. Open-source friendly — adapt & reuse.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple local theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light');
+      if(document.documentElement.classList.contains('light')){
+        document.body.classList.remove('bg-slate-900');
+        document.body.classList.add('bg-white','text-slate-900');
+      } else {
+        document.body.classList.add('bg-slate-900');
+        document.body.classList.remove('bg-white','text-slate-900');
+      }
+    });
+
+    // Minimal offline assistant logic (rule-based)
+    const chatLog = document.getElementById('chatLog');
+    const chatForm = document.getElementById('chatForm');
+    const userInput = document.getElementById('userInput');
+
+    function appendMessage(text, from='ai'){
+      const div = document.createElement('div');
+      div.className = from==='ai' ? 'chat-bubble text-sm' : 'text-sm self-end text-slate-200 bg-slate-700 p-2 rounded-md';
+      div.textContent = text;
+      chatLog.appendChild(div);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    function aiResponse(message){
+      const m = message.toLowerCase();
+      // pattern matching for demo intents
+      if(m.includes('study') || m.includes('learn') || m.includes('tutor')){
+        return 'AI can create a personalized study schedule, generate practice quizzes, and explain concepts step-by-step. Try the Study Planner below.';
+      }
+      if(m.includes('health') || m.includes('doctor') || m.includes('diagnos')){
+        return 'In healthcare, AI helps analyse images, monitor vitals, and suggest possible diagnoses — always in support of, not replacing, clinicians.';
+      }
+      if(m.includes('productiv') || m.includes('email') || m.includes('tasks')){
+        return 'AI automations can summarize long threads, extract action items, and draft replies — saving time on repetitive work.';
+      }
+      if(m.includes('creative') || m.includes('music') || m.includes('write')){
+        return 'AI can propose ideas, expand outlines, or generate variations; humans keep final creative control and polish.';
+      }
+      // fallback generic answer
+      return 'AI helps by augmenting human strengths — it suggests options, automates routine work, and surfaces insights from data. Ask for a concrete example like "plan a study schedule".';
+    }
+
+    chatForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const msg = userInput.value.trim();
+      if(!msg) return;
+      appendMessage(msg, 'user');
+      // small delay to mimic thinking
+      setTimeout(()=>{
+        appendMessage(aiResponse(msg), 'ai');
+      }, 350);
+      userInput.value = '';
+    });
+
+    // Study planner logic
+    document.getElementById('planBtn').addEventListener('click', ()=>{
+      const topicsRaw = document.getElementById('topics').value.trim();
+      const hoursRaw = Number(document.getElementById('hours').value);
+      const out = document.getElementById('planResult');
+      if(!topicsRaw || !hoursRaw || hoursRaw <= 0){ out.textContent = 'Please provide topics and a positive number of hours.'; return; }
+      const topics = topicsRaw.split(',').map(s=>s.trim()).filter(Boolean);
+      const perTopic = Math.max(0.5, (hoursRaw / topics.length));
+      let html = '<strong>Suggested plan:</strong>\n';
+      topics.forEach((t,i)=>{
+        html += `${i+1}. ${t} — ~${perTopic.toFixed(1)} hours\n`;
+      });
+      html += '\nTip: Use spaced repetition and short focused sessions (25-50 minutes).';
+      out.innerHTML = html.replace(/\n/g,'<br>');
+    });
+
+    // Simple summarizer: pick top sentences by word-overlap (naive)
+    document.getElementById('summarizeBtn').addEventListener('click', ()=>{
+      const text = document.getElementById('summaryInput').value.trim();
+      const out = document.getElementById('summaryResult');
+      if(!text){ out.textContent = 'Paste some text to summarize.'; return; }
+      // naive split into sentences
+      const sentences = text.match(/[^\.\!\?]+[\.\!\?]*/g) || [text];
+      // score sentences by length & keyword density
+      const words = text.toLowerCase().split(/\W+/).filter(Boolean);
+      const freq = {};
+      words.forEach(w=>{ freq[w] = (freq[w]||0)+1; });
+      const scores = sentences.map(s=>{
+        const sw = s.toLowerCase().split(/\W+/).filter(Boolean);
+        let score = sw.reduce((acc,w)=> acc + (freq[w]||0), 0);
+        score *= Math.min(1, sw.length/30);
+        return score;
+      });
+      // pick top 2 sentences
+      const idx = scores
+        .map((s,i)=>[s,i])
+        .sort((a,b)=>b[0]-a[0])
+        .slice(0,2)
+        .map(x=>x[1])
+        .sort((a,b)=>a-b);
+      const summary = idx.map(i=>sentences[i].trim()).join(' ');
+      out.textContent = summary || 'Could not produce a short summary.';
+    });
+    document.getElementById('clearSummary').addEventListener('click', ()=>{
+      document.getElementById('summaryInput').value = '';
+      document.getElementById('summaryResult').textContent = '';
+    });
+
+    // Small accessibility: allow Enter in planner / quick submit
+    document.getElementById('plannerForm').addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        document.getElementById('planBtn').click();
+      }
+    });
+
+    // initial greeting
+    appendMessage('Hi! I\'m a small demo assistant. Ask how AI can help in education, healthcare, creative work, or productivity.');
+  </script>
+</body>
+</html>

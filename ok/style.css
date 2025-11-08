@@ -1,0 +1,58 @@
+.home-text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.home-img {
+  transition: transform 0.3s ease;
+}
+
+.home-img:hover {
+  transform: scale(1.05);
+}
+
+
+.home-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  padding-bottom: 10px ;
+  border-radius: 0.75rem; 
+  font-weight: 600;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.12);
+  transform: translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 35px rgba(236,72,153,0.18);
+}
+
+#three-container:hover canvas {
+  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.6));
+  transition: filter 0.4s ease;
+}
+.active-link {
+    color: rgb(96 165 250); /* Tailwind's blue-400 */
+    font-weight: 600;
+    position: relative;
+  }
+  .active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ec4899, #8b5cf6, #3b82f6);
+    border-radius: 1px;
+    opacity: 0.8;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+

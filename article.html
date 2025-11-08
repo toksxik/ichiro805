@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How AI Helps Humans Solve Problems — Article</title>
+    <meta name="description" content="Practical patterns and case studies for integrating AI with human judgment to accelerate discovery, reduce repetitive work, and surface insights.">
+    <meta name="theme-color" content="#0f1724">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* small utility styles that often live in a site CSS for accessibility */
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem 1rem; background:#111827; color:#fff; z-index:9999; border-radius:.25rem; }
+        .reading-progress { position: fixed; left:0; top:0; height:4px; background: linear-gradient(90deg,#06b6d4,var(--progress-color,#60a5fa)); width:0; z-index: 9999; transition: width .15s linear; }
+        .toc a { display:block; color:var(--bs-body-color); text-decoration:none; padding:.15rem 0; }
+        .toc a:focus { outline:2px dashed #60a5fa; outline-offset:3px; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#maincontent">Skip to content</a>
+    <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
+
+    <header class="bg-hero text-white article-hero" role="banner">
+        <div class="max-w-6xl mx-auto px-6 py-4 d-flex align-items-center justify-content-between">
+            <a class="text-xl font-semibold text-white" href="index.html">AI & Humans</a>
+
+            <nav class="d-none d-md-flex align-items-center" aria-label="Primary navigation">
+                <ul class="nav gap-3 mb-0">
+                    <li class="nav-item"><a class="nav-link text-slate-100" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-100" href="article.html" aria-current="page">Article</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-100" href="directory.html">LLM Directory</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-100" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light btn-sm" href="article.html#subscribe">Subscribe</a></li>
+                </ul>
+            </nav>
+
+            <button id="navToggle" class="btn btn-link d-md-none text-slate-100" aria-controls="mobileMenu" aria-expanded="false">Menu</button>
+        </div>
+
+        <!-- mobile menu (hidden by default) -->
+        <nav id="mobileMenu" class="d-md-none px-3 pb-3" hidden>
+            <ul class="nav flex-column gap-2">
+                <li class="nav-item"><a class="nav-link text-slate-100" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-slate-100" href="article.html">Article</a></li>
+                <li class="nav-item"><a class="nav-link text-slate-100" href="directory.html">LLM Directory</a></li>
+                <li class="nav-item"><a class="nav-link text-slate-100" href="about.html">About</a></li>
+                <li class="nav-item"><a class="btn btn-outline-light btn-sm" href="article.html#subscribe">Subscribe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="maincontent" class="max-w-6xl mx-auto px-6 my-10" role="main">
+        <div class="row g-4">
+            <aside class="col-lg-3 d-none d-lg-block">
+                <nav class="toc p-4 bg-slate-800/60 rounded shadow-sm" aria-label="Table of contents">
+                    <strong class="text-slate-200 d-block mb-2">On this page</strong>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#pattern">A simple 3-step pattern</a></li>
+                        <li><a href="#case-studies">Case studies</a></li>
+                        <li><a href="#ethics">Ethics & oversight</a></li>
+                        <li><a href="#getting-started">Getting started</a></li>
+                        <li><a href="#subscribe">Subscribe</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <article class="col-lg-9 article-content text-slate-200">
+                <header>
+                    <h1 class="h2">How AI Helps Humans Solve Problems</h1>
+                    <p class="text-muted">Practical patterns, case studies, and guidance for responsible AI-assisted workflows.</p>
+                </header>
+
+                <section id="intro" class="mb-4">
+                    <h2>Introduction</h2>
+                    <p>AI is a set of tools that, when paired with human judgment, can accelerate discovery, reduce repetitive work, and surface insights. This article explores practical patterns teams can adopt to apply AI responsibly.</p>
+                </section>
+
+                <section id="pattern" class="mb-4">
+                    <h2>A simple 3-step pattern</h2>
+                    <p>The pattern we recommend is: 1) define the problem, 2) use AI to explore, and 3) review and act. Each step emphasizes human context and oversight.</p>
+
+                    <h3>Define the problem</h3>
+                    <p>Start with the outcome you want to change and the constraints that matter. Define metrics and success criteria.</p>
+
+                    <h3>Use AI to explore</h3>
+                    <p>Apply models to generate options, analyze data, or prototype. Treat outputs as hypotheses, not final answers.</p>
+
+                    <h3>Human review & act</h3>
+                    <p>People evaluate outputs for fairness, feasibility, and alignment with values before taking action.</p>
+                </section>
+
+                <section id="case-studies" class="mb-4">
+                    <h2>Case studies</h2>
+
+                    <h3>Customer support</h3>
+                    <p>Teams use AI to triage tickets and draft replies. Humans verify tone and resolve sensitive cases.</p>
+
+                    <h3>Product discovery</h3>
+                    <p>AI helps analyze user signals and propose feature experiments for product teams to A/B test.</p>
+                </section>
+
+                <section id="ethics" class="mb-4">
+                    <h2>Ethics & oversight</h2>
+                    <p>Responsible use requires transparency, human-in-the-loop checks, and clear ownership of decisions.</p>
+                </section>
+
+                <section id="getting-started" class="mb-4">
+                    <h2>Getting started</h2>
+                    <p>Begin with a small experiment: pick a measurable goal, collect data, run a short AI-enabled prototype, and evaluate results against your metric.</p>
+                </section>
+
+                <section id="subscribe" class="mt-4">
+                    <h2>Subscribe for practical guides</h2>
+                    <form id="subscribeForm" class="row g-2 align-items-center" style="max-width:720px;" novalidate>
+                        <div class="col-md-8">
+                            <label for="email" class="visually-hidden">Email</label>
+                            <input id="email" name="email" type="email" class="form-control" placeholder="you@email.com" required aria-required="true">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary w-100" type="submit">Subscribe</button>
+                        </div>
+                        <div id="subscribeMsg" class="mt-3 small d-none" role="status" aria-live="polite"></div>
+                    </form>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="border-top mt-5">
+        <div class="max-w-6xl mx-auto px-6 py-4 text-slate-500 text-sm">© 2025 AI &amp; Humans</div>
+    </footer>
+
+    <script>
+        // Lightweight enhancements: mobile menu toggle, reading progress, simple subscribe UX
+        (function () {
+            const navToggle = document.getElementById('navToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            navToggle?.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!expanded));
+                if (mobileMenu) {
+                    mobileMenu.hidden = expanded;
+                }
+            });
+
+            const progress = document.getElementById('readingProgress');
+            const docHeight = () => document.documentElement.scrollHeight - window.innerHeight;
+            const updateProgress = () => {
+                const total = docHeight() || 1;
+                const pct = Math.min(100, Math.round((window.scrollY / total) * 100));
+                if (progress) progress.style.width = pct + '%';
+            };
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            window.addEventListener('resize', updateProgress);
+            updateProgress();
+
+            const form = document.getElementById('subscribeForm');
+            const msg = document.getElementById('subscribeMsg');
+            form?.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = (document.getElementById('email') || {}).value || '';
+                if (!email || !/.+@.+\..+/.test(email)) {
+                    msg.classList.remove('d-none', 'text-success');
+                    msg.classList.add('text-danger');
+                    msg.textContent = 'Please enter a valid email address.';
+                    return;
+                }
+                // Simulate success: in a real site you'd POST to your backend
+                msg.classList.remove('d-none', 'text-danger');
+                msg.classList.add('text-success');
+                msg.textContent = 'Thanks — check your inbox to confirm subscription.';
+                form.reset();
+            });
+        })();
+    </script>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

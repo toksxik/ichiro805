@@ -1,0 +1,85 @@
+/* Custom styles for AI landing page */
+:root {
+  --hero-gradient: linear-gradient(120deg, #2b8cff, #7be0ff);
+  --muted: #6c757d;
+  --max-width: 1200px;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #212529;
+}
+.bg-hero {
+  background: linear-gradient(
+      180deg,
+      rgba(10, 25, 47, 0.9),
+      rgba(10, 25, 47, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=60")
+      center/cover no-repeat;
+}
+header .container {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+.mockup-card {
+  max-width: 520px;
+}
+.small-opacity {
+  opacity: 0.95;
+}
+.card img {
+  object-fit: cover;
+  height: 180px;
+}
+section {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-primary {
+  background: #346ef4;
+  border-color: #346ef4;
+}
+@media (min-width: 992px) {
+  .bg-hero .display-5 {
+    font-size: 2.4rem;
+  }
+}
+/* utilities */
+.text-start-md {
+  text-align: left;
+}
+
+/* subtle reveal */
+.card,
+.mockup-card,
+.badge {
+padding: 10px;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.card:hover,
+.mockup-card:hover {
+  transform: translateY(-6px);
+}
+/* accessibility focus styles */
+:focus {
+  outline: 3px solid rgba(52, 110, 244, 0.18);
+  outline-offset: 4px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 575px) {
+  .display-5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Article page styles */
+.article-hero{padding:3rem 0}
+.article-meta{color:var(--muted);font-size:.95rem}
+.article-content{line-height:1.78;font-size:1.05rem}
+.toc{position:sticky;top:6rem}
+.reading-progress{position:fixed;left:0;top:0;height:4px;background:linear-gradient(90deg,#346ef4,#2bc0ff);width:0;z-index:1050}
+.toc a.active{font-weight:600;color:#346ef4}
+.toc a{display:block;padding:.2rem 0;color:var(--muted);text-decoration:none}
